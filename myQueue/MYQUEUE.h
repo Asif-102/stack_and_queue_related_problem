@@ -7,7 +7,6 @@ class Node
 public:
     N val;
     Node *next;
-    int count = 0;
 
     Node(N val)
     {
@@ -21,7 +20,8 @@ class Queue
 {
     Node<Q> *front;
     Node<Q> *rear;
-
+    int count = 0;
+    
 public:
     Queue()
     {
