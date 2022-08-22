@@ -7,6 +7,7 @@ class Node
 public:
     N val;
     Node *next;
+    int count = 0;
 
     Node(N val)
     {
@@ -38,11 +39,13 @@ public:
         {
             front = nw;
             rear = nw;
+            count++;
             return;
         }
 
         rear->next = nw;
         rear = rear->next;
+        count++;
     }
 
     // deque --> pop ()
@@ -62,6 +65,7 @@ public:
 
         chk = delNode->val;
         delete delNode;
+        count--;
         return chk;
     }
 
@@ -87,5 +91,11 @@ public:
             return true;
         else
             return false;
+    }
+
+    // size --> size()
+    int size()
+    {
+        return count;
     }
 };
