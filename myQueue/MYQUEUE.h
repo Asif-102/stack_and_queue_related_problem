@@ -2,13 +2,13 @@
 using namespace std;
 
 template <typename N>
-class Node
+class NodeQueue
 {
 public:
     N val;
-    Node *next;
+    NodeQueue *next;
 
-    Node(N val)
+    NodeQueue(N val)
     {
         this->val = val;
         next = NULL;
@@ -18,8 +18,8 @@ public:
 template <typename Q>
 class Queue
 {
-    Node<Q> *front;
-    Node<Q> *rear;
+    NodeQueue<Q> *front;
+    NodeQueue<Q> *rear;
     int count = 0;
     
 public:
@@ -33,7 +33,7 @@ public:
 
     void push(Q val)
     {
-        Node<Q> *nw = new Node<Q>(val);
+        NodeQueue<Q> *nw = new NodeQueue<Q>(val);
 
         if (front == NULL)
         {
@@ -58,7 +58,7 @@ public:
             cout << "Queue Underflow | There is no element in the Queue" << endl;
             return chk;
         }
-        Node<Q> *delNode = front;
+        NodeQueue<Q> *delNode = front;
         front = front->next;
         if (front == NULL)
             rear = NULL;
