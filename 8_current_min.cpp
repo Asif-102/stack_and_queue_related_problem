@@ -6,6 +6,9 @@ using namespace std;
 /*
 7
 1 6 43 1 2 0 5
+
+10
+6 5 5 5 4 7 1 2 1 2
 */
 
 int main(void)
