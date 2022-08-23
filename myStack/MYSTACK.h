@@ -2,14 +2,14 @@
 using namespace std;
 
 template <typename N>
-class Node
+class NodeStack
 {
 public:
     N val;
-    Node *next;
-    Node *prev;
+    NodeStack *next;
+    NodeStack *prev;
 
-    Node(N val)
+    NodeStack(N val)
     {
         this->val = val;
         prev = NULL;
@@ -20,8 +20,8 @@ public:
 template <typename S>
 class Stack
 {
-    Node<S> *head;
-    Node<S> *top;
+    NodeStack<S> *head;
+    NodeStack<S> *top;
     int count = 0;
 
 public:
@@ -33,7 +33,7 @@ public:
     // PUSH
     void push(S val)
     {
-        Node<S> *newNode = new Node<S>(val);
+        NodeStack<S> *newNode = new NodeStack<S>(val);
 
         if (head == NULL)
         {
@@ -50,7 +50,7 @@ public:
     // POP
     S pop()
     {
-        Node<S> *delNode;
+        NodeStack<S> *delNode;
         delNode = top;
         S chk;
 
@@ -106,7 +106,7 @@ public:
         int mid = count / 2 + 1;
         int c = 1;
 
-        Node<S> *tmp = head;
+        NodeStack<S> *tmp = head;
 
         while(c != mid)
             {
